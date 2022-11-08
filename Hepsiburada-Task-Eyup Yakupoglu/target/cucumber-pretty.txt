@@ -1,0 +1,39 @@
+Feature: Verifying whether related products are correctly added to the cart
+
+  Background: Navigate to the website and login # src/test/java/Features/BasketAndProfileScreen.Feature:3
+    Given Navigate to the Trendyol website      # BasketAndProfileScreenSteps.navigateToTheHepsiburadaWebsite()
+    When Login to Trendyol website              # BasketAndProfileScreenSteps.loginToHepsiburadaWebsite()
+
+  Scenario: Adding products to the cart and checking the cart content                            # src/test/java/Features/BasketAndProfileScreen.Feature:7
+    Then The "laptop" is searched from the search textbox. First and third product added to cart # BasketAndProfileScreenSteps.searchAndAddToBasket(String)
+      org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="link account-basket" href="/sepet">...</a> is not clickable at point (1268, 20). Other element would receive the click: <div class="toastrElement error">...</div>
+        (Session info: chrome=107.0.5304.87)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+      System info: host: 'Hakans-MacBook-Pro.local', ip: 'fe80:0:0:0:1c6a:55ee:b261:88e4%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_282'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /var/folders/jp/r9km4zv925g...}, goog:chromeOptions: {debuggerAddress: localhost:59666}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+      Session ID: a0010bc1840eb96172783cc9fb9e8cad
+      	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+      	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+      	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+      	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+      	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+      	at java.lang.reflect.Method.invoke(Method.java:498)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+      	at com.sun.proxy.$Proxy16.click(Unknown Source)
+      	at Pages.Functions.clickFunction(Functions.java:26)
+      	at Pages.BasketAndProfileScreenPage.searchAndAddToBasket(BasketAndProfileScreenPage.java:83)
+      	at StepDefinitions.BasketAndProfileScreenSteps.searchAndAddToBasket(BasketAndProfileScreenSteps.java:32)
+      	at ✽.Then The "laptop" is searched from the search textbox. First and third product added to cart(src/test/java/Features/BasketAndProfileScreen.Feature:8)
+
+    Then The quantity of any product in the basket is increased
